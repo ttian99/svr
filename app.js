@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
 const config = require('./config/config.json');
-const cors = require('cors');
+const allCrossDomain = require('./lib/middleware/allowCrossDomain');
 
 // 跨域问题解决
-app.use(cors()); 
+app.use(allCrossDomain);
 // 启用静态文件服务
 app.use(express.static(config.staticRoot));
 app.get('/', (req, res) => res.send('Hello World!'))
