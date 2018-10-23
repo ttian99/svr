@@ -1,0 +1,6 @@
+{
+    "isDev": false,
+    "projectName": "svr",
+    "staticRoot": "public",
+    "httpPort": 9000
+}

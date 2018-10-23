@@ -1,0 +1,25 @@
+{
+  "name": "svr",
+  "version": "0.0.1",
+  "description": "a simple svr for mini games",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Monkey Jiao",
+  "license": "ISC",
+  "keywords": [
+    "game",
+    "server",
+    "nodejs",
+    "cocos"
+  ]
+}
