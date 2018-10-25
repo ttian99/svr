@@ -1,3 +1,6 @@
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
 const express = require('express')
 const app = express()
 const config = require('./config/config.json');
@@ -9,4 +12,15 @@ app.use(allCrossDomain);
 app.use(express.static(config.staticRoot));
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(config.httpPort, () => console.log('Example app listening on port 9000!, url: http://127.0.0.1:9000 '))
+// 证书 Certificate
+const privateKey = fs.readFileSync('./certificate/private.pem', 'utf8');
+const certificate = fs.readFileSync('./certificate/ca.cer', 'utf8');
+const svrOpts = {
+    key: privateKey,
+    cert: certificate
+}
+// 服务器创建
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(svrOpts, app);
+httpServer.listen(config.httpPort, () => console.log(`HTTP Server running on port ${config.httpPort}!, url: http://127.0.0.1:${config.httpPort} `))
+httpsServer.listen(config.httpsPort, () => console.log(`HTTPS Server running on port ${config.httpsPort}!, url: https://127.0.0.1:${config.httpsPort} `))

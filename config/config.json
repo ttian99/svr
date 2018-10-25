@@ -2,5 +2,6 @@
     "isDev": false,
     "projectName": "svr",
     "staticRoot": "public",
-    "httpPort": 9000
+    "httpPort": 8000,
+    "httpsPort": 9000
 }
