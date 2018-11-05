@@ -32,7 +32,7 @@ app.use(function (req, res, next) {  // 记录请求时间
     const start = req.query.startTime;
     const end = new Date().getTime() / 1000;
     const del = end - start;
-    console.log(`${http.protocol} : ${req.url} , star=${starTime}, end=${endTime}, del=${del}`);
+    console.log(`${http.protocol} : ${req.url} , star=${start}, end=${end}, del=${del}`);
     next();
 });
 
