@@ -31,8 +31,8 @@ app.use(compression()); // 开启Gzip压缩
 app.use(function (req, res, next) {  // 记录请求时间
     const start = req.query.startTime;
     const end = new Date().getTime() / 1000;
-    const del = end - start;
-    console.log(`${http.protocol} : ${req.url} , star=${start}, end=${end}, del=${del}`);
+    const del = (end - start).toFixed(2);
+    console.log(`${req.protocol} : ${req.url} | endTime=${end} | delTime=${del}`);
     next();
 });
 
