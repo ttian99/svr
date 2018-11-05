@@ -3,5 +3,7 @@
     "projectName": "svr",
     "staticRoot": "public",
     "httpPort": 8000,
-    "httpsPort": 9000
+    "httpsPort": 9000,
+    "cer": "./certificate/zeusky.com.cer",
+    "key": "./certificate/zeusky.com.pem"
 }

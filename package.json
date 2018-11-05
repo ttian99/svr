@@ -7,8 +7,10 @@
     "lib": "lib"
   },
   "dependencies": {
+    "compression": "^1.7.3",
     "cors": "^2.8.4",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {},
   "scripts": {
